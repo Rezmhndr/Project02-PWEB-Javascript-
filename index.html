@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <title>Palindrome Checker</title>
+      
+    </head>
+    <body>
+        <h1>PALINDROME CHECKER</h1>
+        <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Ketik disini, jangan disana" onkeypress="cari(event)">
+            <a class="search-btn" href="#">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+
+        <script>
+            function cari(){
+                if(event.key === 'Enter'){ // Cek tombol enter dari kolom input
+                    const val = document.querySelector('input').value; // ngambil variabel dari inputan
+                    palindrom(val);
+                }
+            }
+            function palindrom(val){
+                var re = /[\W_]/g; //menghilangkan karakter yang bukan huruf/angka
+                var lower = val.toLowerCase().replace(re,''); //untuk membbuat seluruh huruf/karakter lower case
+                var balik = lower.split('').reverse().join(''); // untuk membalik string
+                if( lower === balik){ //cek palindrome
+                    alert(val + " Merupakan Palindrome")
+                }
+                else{
+                    alert(val + " Bukan Palindrome");
+                }
+            }
+        </script>
+        <div class="copyright">
+            Tirtanusa Kurnia Adhi Perdana  ||  Muhammad Reza Mahendra
+        </div>
+    </body>
+</html>
